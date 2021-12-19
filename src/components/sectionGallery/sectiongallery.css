@@ -1,0 +1,14 @@
+.gallery{
+    display: flex;
+    justify-content: space-between;
+}
+.midGallery{
+    margin-bottom: -30px;
+    margin-top: 30px;
+}
+.galleryElement{
+    padding: 20px;
+    width: 30%;
+
+    border: 1px solid black;
+}

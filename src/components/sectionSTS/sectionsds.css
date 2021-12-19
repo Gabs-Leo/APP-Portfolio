@@ -1,0 +1,30 @@
+section{
+    padding-bottom: 30px;
+}
+section .container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+section h2{
+    margin-top: 40px;
+}
+.sideToSide{
+    display: flex;
+    justify-content: center;
+}
+.sideToSide img{
+    width: 100%;
+}
+.img{
+    border: 1px solid black;
+}
+.sideToSide div{
+    padding: 20px;
+    width: 50%;
+}
+.text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
