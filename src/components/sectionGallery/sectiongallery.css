@@ -3,6 +3,14 @@
     justify-content: space-between;
     padding-bottom: 30px;
 }
+.gallery i {
+    font-size: 40px;
+    transition: .5s;
+}
+.gallery h3{
+    font-size: 22px;
+    color: white;
+}
 .midGallery{
     margin-bottom: -30px;
     margin-top: 30px;
@@ -10,6 +18,14 @@
 .galleryElement{
     padding: 20px;
     width: 30%;
-
     border: 1px solid var(--borderColor);
+    transition: .3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+.galleryElement:hover{
+    border: 1px solid var(--baseColor);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+}
+.galleryElement:hover i{
+    color: var(--baseColor);
 }

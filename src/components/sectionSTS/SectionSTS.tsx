@@ -5,10 +5,11 @@ export const SectionSDS = () => {
     return (
     <section>
         <div className="container">
-            <h2>Sobre Mim</h2>
+            <h2 className="mb-3">Sobre Mim</h2>
             <div className="sideToSide">
                 <div className="img">
                     <img src={myImage} alt="me" />
+                    <div></div>
                 </div>
                 <div className="text">
                     <h3>Oi, eu sou o Gabs!</h3>

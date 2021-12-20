@@ -2,16 +2,57 @@
     display: flex;
     justify-content: space-between;
 }
-.projectTwo div, .projectThree div{
+.projectTwo .projectElement, .projectThree .projectElement{
     height: 350px;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
 }
-.projectTwo div{
+.projectTwo .projectElement{
     width: 49%;
+    transition: .5s;
+    position: relative;
 }
-.projectThree div{
+.hoverDetails{
+    width: 0% !important;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    background-color: #191a1c;
+
+    transition: .5s;
+}
+.toLeft{
+    right: 0;
+    bottom: 0;
+}
+.hoverContent{
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+
+    padding: 20px;
+}
+.projectThree .projectElement{
     width: 32%;
+    transition: .5s;
+    position: relative;
+}
+.projectThree .hoverDetails {
+    width: 100% !important;
+    height: 0% !important;
+    overflow: hidden;
+    position: absolute;
+    background-color: #191a1c;
+
+    transition: .5s;
+}
+.projectThree .projectElement:hover .hoverDetails{
+    height: 100% !important;
+}
+.projectTwo .projectElement:hover .hoverDetails{
+    width: 100% !important;
 }
