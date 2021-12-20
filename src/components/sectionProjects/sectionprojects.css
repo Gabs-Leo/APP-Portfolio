@@ -1,0 +1,17 @@
+.projectTwo, .projectThree{
+    display: flex;
+    justify-content: space-between;
+}
+.projectTwo div, .projectThree div{
+    height: 350px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.projectTwo div{
+    width: 49%;
+}
+.projectThree div{
+    width: 32%;
+}

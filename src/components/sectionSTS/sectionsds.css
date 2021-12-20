@@ -17,7 +17,7 @@ section h2{
     width: 100%;
 }
 .img{
-    border: 1px solid black;
+    border: 1px solid var(--borderColor);
 }
 .sideToSide div{
     padding: 20px;

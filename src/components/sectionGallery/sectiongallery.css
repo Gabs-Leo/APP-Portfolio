@@ -1,6 +1,7 @@
 .gallery{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 30px;
 }
 .midGallery{
     margin-bottom: -30px;
@@ -10,5 +11,5 @@
     padding: 20px;
     width: 30%;
 
-    border: 1px solid black;
+    border: 1px solid var(--borderColor);
 }
