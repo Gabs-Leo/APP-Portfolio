@@ -2,8 +2,8 @@ import axios from "axios";
 import { Header } from "./components/header/Header";
 import { SectionGallery } from "./components/sectionGallery/SectionGallery";
 import { SectionProjects } from "./components/sectionProjects/SectionProjects";
-import { SectionSDS } from "./components/sectionSTS/SectionSTS";
-import "./css/index.css"
+import { SectionSTS } from "./components/sectionSTS/SectionSTS";
+import "./css/index.css";
 import { BASE_URL } from "./services/URLS";
 
 class Project{
@@ -31,19 +31,7 @@ function App() {
       <Header />
       <SectionGallery />
       <SectionProjects />
-      <SectionSDS />
-      <SectionGallery />
-      {
-        projects.map(
-          project =>
-          <a key={project.id} href={project.link}>
-            <div>
-              <h2>{project.name}</h2>
-              <p>{project.description}</p>
-            </div>
-          </a>
-        )
-      }
+      <SectionSTS />
     </div>
   );
 }

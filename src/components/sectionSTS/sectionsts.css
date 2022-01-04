@@ -19,7 +19,7 @@ section h2{
 .img{
     border: 1px solid var(--borderColor);
 }
-.sideToSide div{
+.sideToSide .img, .sideToSide .text{
     padding: 20px;
     width: 50%;
 }

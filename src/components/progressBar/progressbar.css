@@ -1,0 +1,22 @@
+
+.progressBar, .progress{
+    height: 3px !important;
+}
+.progressBar{
+    width: 100% !important;
+    background-color: var(--textColor) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+.progress{
+    background-color: var(--baseColor) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.30) !important;
+}
+.progressTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+.progressTitle h4{
+    font-size: 15px;
+}
