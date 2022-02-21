@@ -8,9 +8,16 @@
 :root{
     --textColor: #9da1a5;
     --borderColor: #313131;
-
+    --backgroundColor: #191a1c;
     --baseColor: #f473df;
+    --baseColor: #5fd38d;
 }
 body{
     background-color: #191a1c;
+}
+.App{
+    background-image: url("../images/bg.svg");
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: 100%;
 }

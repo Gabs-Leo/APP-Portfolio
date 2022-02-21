@@ -1,9 +1,8 @@
 import axios from "axios";
-import { Header } from "./components/header/Header";
-import { SectionGallery } from "./components/sectionGallery/SectionGallery";
-import { SectionProjects } from "./components/sectionProjects/SectionProjects";
-import { SectionSTS } from "./components/sectionSTS/SectionSTS";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./css/index.css";
+import { Adm } from "./pages/Adm";
+import { Home } from "./pages/Home";
 import { BASE_URL } from "./services/URLS";
 
 class Project{
@@ -21,6 +20,7 @@ class Project{
 }
 
 let projects:Project[] = [new Project(1, "Projeto", "lorem", "/")];
+
 function App() {
   axios.get(`${BASE_URL}`)
     .then(response => {
@@ -28,10 +28,12 @@ function App() {
     })
   return (
     <div className="App">
-      <Header />
-      <SectionGallery />
-      <SectionProjects />
-      <SectionSTS />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="adm" element={<Adm />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

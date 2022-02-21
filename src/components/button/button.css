@@ -1,4 +1,23 @@
 .button{
+    border: 1px solid var(--borderColor);
+    width: 150px;
+    text-align: center;
+    transition: ease .5s;
+    margin: 20px 0px;
+}
+.button a{
     padding: 10px;
-    border: 2px solid black;
+    width: 100%;
+
+    display: inline-block;
+    color: var(--textColor) !important;
+    text-decoration: none;
+
+    transition: .5s;
+}
+.button:hover{
+    border: 1px solid var(--baseColor);
+}
+.button:hover a{
+    color: var(--baseColor) !important;
 }

@@ -3,19 +3,21 @@ header{
     height: 100vh;
     position: relative;
 
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #191a1c !important;
     background-image: url("../../images/bg.jpg") !important;
     background-attachment: fixed;
     
+    text-align: center;
 
     display: flex;
     align-items: center;
 }
 h1{
     font-size: 80px !important;
+    color: white;
 }
 header h2{
     font-size: 20px;

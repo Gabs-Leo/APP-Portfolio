@@ -1,0 +1,43 @@
+.formContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.findMe{
+    width: 35% !important;
+    padding: 20px;
+    border: 1px solid var(--borderColor);
+    background-color: var(--backgroundColor);
+}
+.formContainer form{
+    width: 60% !important;
+    transition: .3s;
+}
+.userFields{
+    display: flex;
+    justify-content: space-between;
+}
+textarea{
+    margin: 25px 0px !important;
+    width: 100%;
+}
+.userFields input, textarea{
+    text-align: center;
+    padding: 10px;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--borderColor) !important;
+    outline: none !important;
+    transition: .3s;
+}
+.userFields input:focus, textarea:focus{
+    border: 1px solid var(--baseColor) !important;
+}
+.formContainer p {
+    margin: 0px;
+}
+.formContainer h4{
+    font-size: 16px;
+    color: white;
+    margin: 20px 0px 10px 0px;
+}
