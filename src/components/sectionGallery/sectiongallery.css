@@ -30,3 +30,17 @@
 .galleryElement:hover i{
     color: var(--baseColor);
 }
+
+@media screen and (max-width: 1000px){
+    .gallery{
+        flex-direction: column;
+        align-items: center;
+    }
+    .midGallery{
+        margin: 0;
+    }
+    .galleryElement{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

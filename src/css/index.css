@@ -3,7 +3,6 @@
 
 *{
     box-sizing: border-box;
-    color: var(--textColor);
 }
 :root{
     --textColor: #9da1a5;
@@ -12,12 +11,14 @@
     --baseColor: #f473df;
     --baseColor: #5fd38d;
 }
-body{
-    background-color: #191a1c;
+p, h2, h3, h4, i, input, textarea, tr{
+    color: var(--textColor);
 }
-.App{
+body{
     background-image: url("../images/bg.svg");
     background-position: center;
     background-repeat: repeat-y;
     background-size: 100%;
+    background-color: #191a1c;
+    overflow-x: hidden;
 }

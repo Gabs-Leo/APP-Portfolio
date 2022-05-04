@@ -9,8 +9,8 @@ export const Home = () => {
     return (
         <>
         <Header />
-        <SectionGallery />
         <SectionProjects />
+        <SectionGallery />
         <SectionSTS />
         <Form />
         <Footer />

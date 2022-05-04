@@ -15,16 +15,32 @@ section h2{
 }
 .sideToSide img{
     width: 100%;
+    margin-left: -00px;
+    margin-right: 0 !important;
 }
-.img{
-    border: 1px solid var(--borderColor);
-}
-.sideToSide .img, .sideToSide .text{
-    padding: 20px;
+.sideToSide .img{
     width: 50%;
 }
-.text{
+
+.sideToSide .text{
+    padding: 20px;
     display: flex;
+    width: 50%;
     justify-content: center;
     flex-direction: column;
+}
+.sideToSide .text h3{
+    margin-left: -100px
+}
+.sideToSide .text p{
+    margin-left: -50px
+}
+
+@media screen and (max-width: 1000px){
+    .sideToSide .img, .sideToSide .text{
+        width: 100%;
+    }
+    .sideToSide{
+        flex-direction: column;
+    }
 }

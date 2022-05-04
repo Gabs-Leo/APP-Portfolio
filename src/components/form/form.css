@@ -22,7 +22,7 @@ textarea{
     margin: 25px 0px !important;
     width: 100%;
 }
-.userFields input, textarea{
+.userFields input, textarea, .longField input{
     text-align: center;
     padding: 10px;
     background-color: var(--backgroundColor);
@@ -40,4 +40,20 @@ textarea{
     font-size: 16px;
     color: white;
     margin: 20px 0px 10px 0px;
+}
+
+.longField input{
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px){
+    .findMe,
+    .formContainer form,
+    .formContainer form input{
+        width: 100% !important;
+        margin: 10px 0px;
+    }
+    .formContainer, .userFields{
+        flex-direction: column;
+    }
 }

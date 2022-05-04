@@ -1,26 +1,31 @@
 import "./sectionsts.css"
 import myImage from "./../../images/myself.png"
 import { ProgressBar } from "../progressBar/ProgressBar"
-import { Button } from "../button/Button"
+import { MyButton } from "../button/MyButton"
 
 export const SectionSTS = () => {
     return (
-    <section>
+    <section id="about" className="pt-5">
         <div className="container">
-            <h2 className="mb-3">Sobre Mim</h2>
+            <h2 data-aos="fade-right" data-aos-duration="1000" style={{fontSize: `60px`}}>Sobre Mim</h2>
             <div className="sideToSide">
-                <div className="img">
+                <div className="img" data-aos="fade-right" data-aos-duration="1400">
                     <img src={myImage} alt="me" />
                     <div></div>
                 </div>
                 <div className="text">
-                    <h3>Oi, eu sou o Gabs!</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, harum tempore debitis adipisci quisquam culpa, vel cum distinctio unde doloremque provident consectetur sit labore, nostrum voluptatibus dolores veniam blanditiis sapiente?</p>
-                    <ProgressBar title="Spring Boot" percentage={90}/>
-                    <ProgressBar title="GitHub" percentage={75}/>
-                    <ProgressBar title="React Js" percentage={70}/>
-                    <ProgressBar title="Bootstrap" percentage={70}/>
-                    <Button />
+                    <h3 data-aos="fade-left" data-aos-duration="1600">Oi, eu sou o Gabs!</h3>
+                    <p data-aos="fade-left" data-aos-duration="2000">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, harum tempore debitis adipisci quisquam culpa, vel cum distinctio unde doloremque provident consectetur sit labore, nostrum voluptatibus dolores veniam blanditiis sapiente?</p>
+                    <div data-aos="fade-left" data-aos-duration="2400">
+                        <ProgressBar title="Spring Boot" percentage={90}/>
+                        <ProgressBar title="GitHub" percentage={75}/>
+                        <ProgressBar title="React Js" percentage={70}/>
+                        <ProgressBar title="Bootstrap" percentage={70}/>
+                    </div>
+                    <br />
+                    <div data-aos="fade-left" data-aos-duration="2400">
+                        <MyButton text="Contato" link="#contact"/>
+                    </div>
                 </div>
             </div>
         </div>

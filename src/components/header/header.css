@@ -3,11 +3,11 @@ header{
     height: 100vh;
     position: relative;
 
-    background-position: right;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #191a1c !important;
-    background-image: url("../../images/bg.jpg") !important;
+    background-image: url("../../images/33253.png") !important;
     background-attachment: fixed;
     
     text-align: center;
@@ -17,8 +17,10 @@ header{
 }
 h1{
     font-size: 80px !important;
-    color: white;
+    color: var(--baseColor);
 }
 header h2{
-    font-size: 20px;
+    font-size: 30px;
+    color: white;
+    margin-bottom: -15px !important;
 }

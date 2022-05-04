@@ -1,0 +1,16 @@
+.projectLine img{
+    width: 200px;
+}
+.projectActions a{
+    margin-right: 10px !important;
+}
+.sideToside{
+    display: flex;
+    justify-content: space-between;
+}
+#sideTosideImg, #sideToside form{
+    width: 50%;
+}
+#sideTosideImg img{
+    width: 100%;
+}
