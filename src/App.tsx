@@ -13,12 +13,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/adm" element={<Adm />} />
-          <Route path="/adm/:projectId" element={<EditProject />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
+
+/*
+          <Route path="/adm" element={<Adm />} />
+          <Route path="/adm/:projectId" element={<EditProject />} />
+*/
 
 export default App;

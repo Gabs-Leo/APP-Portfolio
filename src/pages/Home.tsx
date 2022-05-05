@@ -8,12 +8,12 @@ import { SectionSTS } from "../components/sectionSTS/SectionSTS"
 export const Home = () => {
     return (
         <>
-        <Header />
-        <SectionProjects />
-        <SectionGallery />
-        <SectionSTS />
-        <Form />
-        <Footer />
+            <Header />
+            <SectionProjects />
+            <SectionGallery />
+            <SectionSTS />
+            <Form />
+            <Footer />
         </>
     )
 }

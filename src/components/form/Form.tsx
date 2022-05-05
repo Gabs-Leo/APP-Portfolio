@@ -18,7 +18,6 @@ export const Form = () => {
             <div data-aos="fade-right" data-aos-duration="1600" className="findMe">
                 <h4>EMAIL</h4>
                 <p>gabrieldemoraistaveira@gmail.com</p>
-                <p>gabrieldemoraistaveira@gmail.com</p>
 
                 <h4>WHATSAPP</h4>
                 <p>(16) 99413-2334</p>
