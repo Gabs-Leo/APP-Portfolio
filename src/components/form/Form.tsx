@@ -12,8 +12,8 @@ export const Form = () => {
     }
 
     return(
-    <div className="container" id="contact" style={{padding: `180px 0px`}}>
-        <h2 data-aos="fade-right" data-aos-duration="2000" className="mt-4 mb-3" style={{fontSize: `60px`}}>Fale Comigo</h2>
+    <div className="container" id="contact" style={{padding: `180px 20px`}}>
+        <h2 data-aos="fade-right" data-aos-duration="2000" className="mt-4 mb-3" style={{fontSize: `60px`}}>Contate<strong>-me</strong></h2>
         <div className="formContainer">
             <div data-aos="fade-right" data-aos-duration="1600" className="findMe">
                 <h4>EMAIL</h4>

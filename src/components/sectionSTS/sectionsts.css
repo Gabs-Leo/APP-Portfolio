@@ -37,9 +37,15 @@ section h2{
 }
 
 @media screen and (max-width: 1000px){
-    .sideToSide .img, .sideToSide .text{
+    .sideToSide .img, 
+    .sideToSide .text{
         width: 100%;
     }
+    .sideToSide .text p,
+    .sideToSide .text h3{
+        margin-left: 0px
+    }
+
     .sideToSide{
         flex-direction: column;
     }

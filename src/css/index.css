@@ -14,6 +14,10 @@
 p, h2, h3, h4, i, input, textarea, tr{
     color: var(--textColor);
 }
+strong{
+    color: var(--baseColor);
+    font-weight: normal;
+}
 body{
     background-image: url("../images/bg.svg");
     background-position: center;

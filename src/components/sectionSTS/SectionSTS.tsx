@@ -7,7 +7,7 @@ export const SectionSTS = () => {
     return (
     <section id="about" className="pt-5">
         <div className="container">
-            <h2 data-aos="fade-right" data-aos-duration="1000" style={{fontSize: `60px`}}>Sobre Mim</h2>
+            <h2 data-aos="fade-right" data-aos-duration="1000" style={{fontSize: `60px`}}><strong>Sobre</strong> Mim</h2>
             <div className="sideToSide">
                 <div className="img" data-aos="fade-right" data-aos-duration="1400">
                     <img src={myImage} alt="me" />
