@@ -1,9 +1,14 @@
 import {Divide as Hamburger} from "hamburger-react"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import logo from "./../../images/icon.png"
 import "./navbar.css"
 
-export const Navbar = () => {
+interface NavProps {
+    logoLink?:string
+}
+
+export const Navbar = (props:NavProps) => {
     const [isOpen, setOpen] = useState(false);
     const [menuWidth, setMenuWidth] = useState(0);
 
@@ -21,7 +26,7 @@ export const Navbar = () => {
     <nav style={{backgroundColor: `rgba(0,0,0, 0.6)`}}>
         <div className="container">
             <div>
-                <a href="/"><img id="logo" src={logo} alt="ValHalla" /></a>
+                <Link to={props.logoLink || "/"}><img id="logo" src={logo} alt="ValHalla" /></Link>
             </div>
             <Hamburger color="var(--baseColor)" toggled={isOpen} toggle={handleOpen} />
         </div>

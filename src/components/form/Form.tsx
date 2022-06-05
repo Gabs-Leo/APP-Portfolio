@@ -1,4 +1,6 @@
+import { Alert, Snackbar } from "@mui/material";
 import axios from "axios";
+import { useState } from "react";
 import { useForm } from "react-hook-form"
 import { BASE_URL } from "../../services/URLS";
 import { Message } from "../../types/Message";
@@ -7,8 +9,11 @@ import "./form.css"
 
 export const Form = () => {
     const {register, handleSubmit} = useForm<Message>();
+    const [open, setOpen] = useState(false);
+
     const submitForm = (i:Message) => {
-        axios.post(`${BASE_URL}/api/messages`, i);
+        axios.post(`${BASE_URL}/api/v1/emails`, i);
+        setOpen(true);
     }
 
     return(
@@ -27,14 +32,24 @@ export const Form = () => {
             </div>
             <form data-aos="fade-left" data-aos-duration="1600" onSubmit={handleSubmit(submitForm)}>
                 <div className="userFields">
-                    <input {...register("name")} autoComplete="off" type="text" name="name" placeholder="Nome" />
-                    <input {...register("email")} autoComplete="off" type="text" name="email" placeholder="Email" />
-                    <input {...register("phone")} autoComplete="off" type="text" name="phone" placeholder="Telefone" />
+                    <input {...register("name")} required autoComplete="off" type="text" name="name" placeholder="Nome" />
+                    <input {...register("email")} required autoComplete="off" type="text" name="email" placeholder="Email" />
+                    <input {...register("phone")} required autoComplete="off" type="text" name="phone" placeholder="Telefone" />
                 </div>
-                <textarea {...register("message")} placeholder="Mensagem" name="" id="" cols={30} rows={5}></textarea>
+                <textarea {...register("message")} placeholder="Mensagem" name="message" id="" cols={30} rows={5}></textarea>
                 <MyButton type="submit" link="#" text="Enviar" />
             </form>
         </div>
+        <Snackbar
+            open={open}
+            onClose={() => setOpen(false)}
+            autoHideDuration={4000}
+            anchorOrigin={{ vertical: `bottom`, horizontal: `right` }}
+        >
+        <Alert onClose={() => setOpen(false)} severity="success" sx={{width: "100%"}}>
+            Email Enviado com Sucesso!
+        </Alert>
+        </Snackbar>
     </div>
     )
 }

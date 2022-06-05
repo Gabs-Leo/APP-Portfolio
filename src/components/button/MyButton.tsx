@@ -4,12 +4,14 @@ interface ButtonProps {
     link?:string,
     type?:string,
     text:string
+
+    size?:"long" | "short";
 }
 
 export const MyButton = (props:ButtonProps) => {
     if(props.type === "submit"){
         return (
-            <div className="button">
+            <div className="button" style={{width: `${props.size === "long" ? `100%` : `auto` }`}}>
                 <input type="submit" value={props.text} />
             </div>
         )

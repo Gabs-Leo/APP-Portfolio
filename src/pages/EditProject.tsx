@@ -5,20 +5,52 @@ import { forwardRef, useCallback, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Navigate, useParams } from "react-router-dom";
-import { Navbar } from "../components/navbar/Navbar"
+import { Navbar } from "../components/navbar/Navbar";
 import { BASE_URL } from "../services/URLS";
 import { Project } from "../types/Project"
 import { useDropzone } from "react-dropzone";
-import defaultImage from "./../images/pj1.jpg"
 
 export const EditProject = () => {
+
+    interface DropZoneProps {
+        project:Project;
+    }
+    
+    function Dropzone(props:DropZoneProps) {
+        const onDrop = useCallback(acceptedFiles => {
+            const file = acceptedFiles[0];
+            const formData = new FormData();
+            formData.append("file", file);
+            axios.post(`${BASE_URL}/adm/v1/projects/${props.project.id}`, formData, {
+                headers:{
+                    "Content-Type" : "multipart/form-data"
+                }
+            }).then(() => {
+                axios.get(`${BASE_URL}/api/v1/projects/${params.projectId}`).then((i) => {
+                    setProject(i.data.data as Project);
+                })
+            })
+        }, []);
+        const {getRootProps, getInputProps} = useDropzone({onDrop})
+        
+        return (
+            <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                {
+                    <img src={`${BASE_URL}/api/v1/projects/images/${props.project.id}`} alt="" />
+                }
+            </div>
+        )
+      }
+
     let params = useParams();
     const [project, setProject] = useState<Project>();
     useEffect(() => {
-        axios.get(`${BASE_URL}/api/projects/${params.projectId}`).then((i) => {
+        axios.get(`${BASE_URL}/api/v1/projects/${params.projectId}`).then((i) => {
             setProject(i.data.data as Project);
         })
-    }, [])
+    }, 
+    []);
     
     const {register, handleSubmit} = useForm<Project>({});
 
@@ -34,9 +66,6 @@ export const EditProject = () => {
         if(i.description === ""){
             i.description = project?.description || "";
         }
-        if(i.image === ""){
-            i.image = project?.image || "";
-        }
         if(i.link === ""){
             i.link = project?.link || "";
         }
@@ -51,7 +80,7 @@ export const EditProject = () => {
         return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
     })
 
-    const [redirect, setRedirect] = useState(false)
+    const [redirect, setRedirect] = useState(false);
     if(redirect){
         return <Navigate to={`/adm`} />
     }
@@ -92,24 +121,6 @@ export const EditProject = () => {
     )
 }
 
-interface DropZoneProps {
-    project:Project;
-}
 
-function Dropzone(props:DropZoneProps) {
-    const onDrop = useCallback(acceptedFiles => {
-      const file = acceptedFiles[0];
-    }, [])
-    const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
-    
-    return (
-      <div {...getRootProps()}>
-        <input {...getInputProps()} />
-        {
-            <img src={`${props.project.image || defaultImage}`} alt="" />
-        }
-      </div>
-    )
-  }
 
 //anchorOrigin={{'bottom', 'right'}}
