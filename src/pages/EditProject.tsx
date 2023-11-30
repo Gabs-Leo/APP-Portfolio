@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { Navigate, useParams } from "react-router-dom";
 import { Navbar } from "../components/navbar/Navbar";
 import { BASE_URL } from "../services/URLS";
-import { Project } from "../types/Project"
+import { Project } from "../types/Project";
 import { useDropzone } from "react-dropzone";
 
 export const EditProject = () => {
@@ -120,7 +120,3 @@ export const EditProject = () => {
         </>
     )
 }
-
-
-
-//anchorOrigin={{'bottom', 'right'}}

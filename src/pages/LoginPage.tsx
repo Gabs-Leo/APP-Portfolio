@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
-import { MyButton } from "../components/button/MyButton"
+import { MyButton } from "../components/button/MyButton";
 import { BASE_URL } from "../services/URLS";
 
 type Login = {
@@ -19,9 +19,7 @@ export const LoginPage = () => {
             localStorage.setItem("token", i.data.access_token);
             setRedirect(true);
         })
-        .catch(() => {
-            
-        });
+        .catch(() => {});
     }
 
     if(redirect) {

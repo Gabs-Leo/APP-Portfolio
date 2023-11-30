@@ -23,9 +23,4 @@ function App() {
   );
 }
 
-/*
-          <Route path="/adm" element={<Adm />} />
-          <Route path="/adm/:projectId" element={<EditProject />} />
-*/
-
 export default App;
