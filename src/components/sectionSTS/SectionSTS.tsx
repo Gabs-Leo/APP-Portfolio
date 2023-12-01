@@ -2,12 +2,13 @@ import "./sectionsts.css"
 import myImage from "./../../images/myself.png"
 import { ProgressBar } from "../progressBar/ProgressBar"
 import { MyButton } from "../button/MyButton"
+import { SectionH2 } from "../sectionH2/SectionH2"
 
 export const SectionSTS = () => {
     return (
     <section id="about" className="pt-5">
         <div className="container">
-            <h2 data-aos="fade-right" data-aos-duration="1000" style={{fontSize: `60px`}}><strong>Sobre</strong> Mim</h2>
+            <SectionH2 text="Sobre Mim" color="base" />
             <div className="sideToSide">
                 <div className="img" data-aos="fade-right" data-aos-duration="1400">
                     <img src={myImage} alt="me" />

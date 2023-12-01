@@ -1,4 +1,4 @@
-export const BASE_URL = process.env.BASE_URL;
+export const BASE_URL = process.env.REACT_APP_BACKEND_URL;
 export const LOGIN_URL = `${BASE_URL}/api/v1/auth/login`;
 export const EMAIL_URL = `${BASE_URL}/api/v1/emails`;
 export const PROJECT_URL = `${BASE_URL}/api/v1/projects`;
