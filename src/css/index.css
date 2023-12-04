@@ -11,8 +11,17 @@
     --baseColor: #f473df;
     --baseColor: #5fd38d;
 }
-p, h2, h3, h4, i, input, textarea, tr{
+p, h2, h3, h4, i, input, textarea, tr, ul{
     color: var(--textColor);
+}
+ul {
+    list-style: none; /* Remove default bullets */
+}
+li::before {
+    content: "⧫"; 
+    color: var(--baseColor);
+    width: 1em;
+    display: inline-block;
 }
 strong{
     color: var(--baseColor);
