@@ -1,13 +1,12 @@
 import "./sectiongallery.css"
 import bg from "./../../images/33253.png"
+import { SectionH2 } from "../sectionH2/SectionH2"
 
 export const SectionGallery = () => {
-
-
     return (
         <div id="services" style={{padding: `110px 0px`, backgroundImage: `url(${bg})`, backgroundPosition: `center`, backgroundSize: `cover`, backgroundAttachment: `fixed`}}>
         <section className="container" style={{paddingTop: `80px`, paddingBottom: `220px`}}>
-            <h2 data-aos-mirror="true" data-aos="fade-right" className="mb-3" style={{color: `var(--baseColor)`, fontSize: `60px`}}>Serviços</h2>
+            <SectionH2 text="Serviços" color="base" />
             <div className="gallery">
                 <div data-aos-mirror="true" data-aos="fade-up" data-aos-duration="1000" className="galleryElement">
                     <i className="fas fa-power-off mb-2"></i>

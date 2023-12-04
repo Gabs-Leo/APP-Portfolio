@@ -1,31 +1,33 @@
 
 import { CircularProgress, Skeleton } from "@mui/material";
 import axios from "axios"
-import jwtDecode from "jwt-decode";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 import { Navbar } from "../components/navbar/Navbar";
-import { BASE_URL } from "../services/URLS"
-import { JWTUser } from "../types/JWTUser";
+import { BASE_URL, PROJECT_URL } from "../services/URLS"
 import { Project } from "../types/Project";
 import "./adm.css";
 
 export const Adm = () => {
     const [projects, setProjects] = useState<Project[]>([]);
-
     useEffect(() => {
-        let x:number = 0;
-
-        axios.get(`${BASE_URL}/api/v1/projects`).then((i) => {
-            setProjects(i.data.data.content as Project[]);
+        const config = {
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        };
+        axios.get(PROJECT_URL, config).then((i) => {
+            console.log(i.data);
+            setProjects(i.data.content as Project[]);
+        }).catch(i => {
+            console.log(i.response);
         });
-
         if(!localStorage.getItem("token")) {
             setAddress(`/`);
             setRedirect(true);
-        } else {
+        }/* else {
             const user = jwtDecode(localStorage.getItem("token") || "") as JWTUser;
+            console.log(user);
+            
             user.roles.forEach(i => {
                 if(i === "ROLE_ADMIN") {
                     x = 1;
@@ -35,7 +37,7 @@ export const Adm = () => {
                 setAddress(`/`);
                 setRedirect(true);
             }
-        }
+        }*/
         ;
     }, []);
 
@@ -47,7 +49,7 @@ export const Adm = () => {
             <td className="projectActions">
                 <Button
                 target="_blank" 
-                href={i.link}
+                href={i.repositoryUrl}
                 variant="success"
                 >
                     <i className="fas fa-link"></i>

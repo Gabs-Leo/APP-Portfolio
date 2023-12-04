@@ -2,11 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
-import { MyButton } from "../components/button/MyButton"
-import { BASE_URL } from "../services/URLS";
+import { LOGIN_URL } from "../services/URLS";
+import { MyButton } from "../components/button/MyButton";
 
 type Login = {
-    username:string,
+    email:string,
     password:string
 }
 
@@ -14,14 +14,12 @@ export const LoginPage = () => {
     const {register, handleSubmit} = useForm<Login>();
     const [redirect, setRedirect] = useState(false);
     const submitForm = (i:Login) => {
-        axios.post(`${BASE_URL}/login`, i)
+        axios.post(LOGIN_URL, i)
         .then(i => {
-            localStorage.setItem("token", i.data.access_token);
+            localStorage.setItem("token", i.data.content);
             setRedirect(true);
         })
-        .catch(() => {
-            
-        });
+        .catch(() => {});
     }
 
     if(redirect) {
@@ -36,7 +34,7 @@ export const LoginPage = () => {
                 }}
             data-aos="fade-left" data-aos-duration="1600" onSubmit={handleSubmit(submitForm)}>
                 <div className="userFields" style={{display: `flex`, flexDirection: `column`}}>
-                    <input {...register("username")} autoComplete="off" type="text" name="username" placeholder="Username" />
+                    <input {...register("email")} autoComplete="off" type="text" name="email" placeholder="Username" />
                     <input {...register("password")} autoComplete="off" type="password" name="password" placeholder="Senha" />
                 </div>
                 <br/>

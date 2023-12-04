@@ -6,12 +6,14 @@ import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Navigate, useParams } from "react-router-dom";
 import { Navbar } from "../components/navbar/Navbar";
-import { BASE_URL } from "../services/URLS";
-import { Project } from "../types/Project"
+import { BASE_URL, PROJECT_URL } from "../services/URLS";
+import { Project } from "../types/Project";
 import { useDropzone } from "react-dropzone";
 
 export const EditProject = () => {
-
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    };
     interface DropZoneProps {
         project:Project;
     }
@@ -21,12 +23,14 @@ export const EditProject = () => {
             const file = acceptedFiles[0];
             const formData = new FormData();
             formData.append("file", file);
-            axios.post(`${BASE_URL}/adm/v1/projects/${props.project.id}`, formData, {
+
+            axios.post(`${PROJECT_URL}/${props.project.id}`, {
                 headers:{
-                    "Content-Type" : "multipart/form-data"
+                    "Content-Type" : "multipart/form-data",
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
             }).then(() => {
-                axios.get(`${BASE_URL}/api/v1/projects/${params.projectId}`).then((i) => {
+                axios.get(`${PROJECT_URL}/${params.projectId}`, config).then((i) => {
                     setProject(i.data.data as Project);
                 })
             })
@@ -37,7 +41,7 @@ export const EditProject = () => {
             <div {...getRootProps()}>
                 <input {...getInputProps()} />
                 {
-                    <img src={`${BASE_URL}/api/v1/projects/images/${props.project.id}`} alt="" />
+                    <img src={`${PROJECT_URL}/images/${props.project.id}`} alt="" />
                 }
             </div>
         )
@@ -46,7 +50,7 @@ export const EditProject = () => {
     let params = useParams();
     const [project, setProject] = useState<Project>();
     useEffect(() => {
-        axios.get(`${BASE_URL}/api/v1/projects/${params.projectId}`).then((i) => {
+        axios.get(`${PROJECT_URL}/${params.projectId}`, config).then((i) => {
             setProject(i.data.data as Project);
         })
     }, 
@@ -66,10 +70,10 @@ export const EditProject = () => {
         if(i.description === ""){
             i.description = project?.description || "";
         }
-        if(i.link === ""){
-            i.link = project?.link || "";
+        if(i.repositoryUrl === ""){
+            i.repositoryUrl = project?.repositoryUrl || "";
         }
-        axios.put(`${BASE_URL}/adm/v1/projects/${params.projectId}`, i).then(i => {
+        axios.put(`${PROJECT_URL}/${params.projectId}`, i).then(i => {
             console.log(i);
         }).then(() => {
             setOpen(true);
@@ -98,7 +102,7 @@ export const EditProject = () => {
             <form onSubmit={handleSubmit(submitForm)} style={{paddingLeft: `30px`}}>
                 <div className="longField">
                     <input {...register("name")} autoComplete="off" type="text" id="name" defaultValue={project?.name}/>
-                    <input {...register("link")} autoComplete="off" type="text" id="link" defaultValue={project?.link} />
+                    <input {...register("repositoryUrl")} autoComplete="off" type="text" id="repositoryUrl" defaultValue={project?.repositoryUrl} />
                 </div>
                 <textarea {...register("description")} placeholder="Mensagem" name="description" id="description" cols={30} rows={5} defaultValue={project?.description}></textarea>
                 <div className="sideToside">
@@ -120,7 +124,3 @@ export const EditProject = () => {
         </>
     )
 }
-
-
-
-//anchorOrigin={{'bottom', 'right'}}
