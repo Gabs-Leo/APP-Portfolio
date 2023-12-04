@@ -11,6 +11,9 @@ import { Project } from "../types/Project";
 import { useDropzone } from "react-dropzone";
 
 export const EditProject = () => {
+
+    
+
     const config = {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     };
@@ -31,10 +34,10 @@ export const EditProject = () => {
                 }
             }).then(() => {
                 axios.get(`${PROJECT_URL}/${params.projectId}`, config).then((i) => {
-                    setProject(i.data.data as Project);
+                    setProject(i.data.content.content as Project);                    
                 })
             })
-        }, []);
+        }, [props.project.id]);
         const {getRootProps, getInputProps} = useDropzone({onDrop})
         
         return (
@@ -51,7 +54,7 @@ export const EditProject = () => {
     const [project, setProject] = useState<Project>();
     useEffect(() => {
         axios.get(`${PROJECT_URL}/${params.projectId}`, config).then((i) => {
-            setProject(i.data.data as Project);
+            setProject(i.data.content as Project);
         })
     }, 
     []);
@@ -73,10 +76,13 @@ export const EditProject = () => {
         if(i.repositoryUrl === ""){
             i.repositoryUrl = project?.repositoryUrl || "";
         }
-        axios.put(`${PROJECT_URL}/${params.projectId}`, i).then(i => {
+        axios.put(`${PROJECT_URL}/${params.projectId}`, i, config).then(i => {
             console.log(i);
         }).then(() => {
             setOpen(true);
+        }).catch(e => {
+            console.log(i);
+            console.log(e.response)
         })
     }
 
@@ -88,6 +94,8 @@ export const EditProject = () => {
     if(redirect){
         return <Navigate to={`/adm`} />
     }
+    
+    
 
     return(
         <>
