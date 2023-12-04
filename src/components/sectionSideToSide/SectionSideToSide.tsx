@@ -16,7 +16,7 @@ export const SectionSideToSide = () => {
                 </div>
                 <div className="text">
                     <h3 data-aos="fade-left" data-aos-duration="1600">Oi, eu sou o <strong>Gabs!</strong></h3>
-                    <p data-aos="fade-left" data-aos-duration="2000">Meu nome é Gabriel, tenho 19 anos, moro em Franca-Sp (Brasil). Atualmente estou cursando Análise e Desenvolvimento de Sistemas (Fatec Franca-SP) e fazendo o curso online de desenvolvimento de Games da Danki Code.</p>
+                    <p data-aos="fade-left" data-aos-duration="2000">Meu nome é Gabriel, tenho {(2003 - new Date().getFullYear())*-1} anos, moro em Franca-Sp (Brasil). Atualmente estou cursando Análise e Desenvolvimento de Sistemas (Fatec Franca-SP) e fazendo o curso online de desenvolvimento de Games da Danki Code.</p>
                     <div data-aos="fade-left" data-aos-duration="2400">
                         <ProgressBar title="Spring Boot" percentage={90}/>
                         <ProgressBar title="GitHub" percentage={75}/>
