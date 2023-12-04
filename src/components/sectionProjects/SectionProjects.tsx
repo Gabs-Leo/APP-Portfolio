@@ -12,7 +12,7 @@ export const SectionProjects = () => {
     const [smallProjects, setSmallProjects] = useState<Project[]>([]);
     useEffect(() => {
         axios.get(PROJECT_URL).then(i => {
-            const proj = i.data.data.content as Project[];
+            const proj = i.data.content as Project[];
             setLongProjects([proj[0], proj[1]]);
             setSmallProjects([proj[2], proj[3], proj[4]]);
             console.log(proj);

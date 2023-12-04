@@ -76,7 +76,7 @@ export const EditProject = () => {
         if(i.repositoryUrl === ""){
             i.repositoryUrl = project?.repositoryUrl || "";
         }
-        axios.put(`${PROJECT_URL}/${params.projectId}`, i).then(i => {
+        axios.put(`${PROJECT_URL}/${params.projectId}`, i, config).then(i => {
             console.log(i);
         }).then(() => {
             setOpen(true);
