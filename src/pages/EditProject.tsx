@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Navigate, useParams } from "react-router-dom";
 import { Navbar } from "../components/navbar/Navbar";
-import { BASE_URL, PROJECT_URL } from "../services/URLS";
+import { PROJECT_ADMIN_URL, PROJECT_URL } from "../services/URLS";
 import { Project } from "../types/Project";
 import { useDropzone } from "react-dropzone";
 
@@ -27,7 +27,7 @@ export const EditProject = () => {
             const formData = new FormData();
             formData.append("file", file);
 
-            axios.post(`${PROJECT_URL}/${props.project.id}`, {
+            axios.post(`${PROJECT_ADMIN_URL}/${props.project.id}`, {
                 headers:{
                     "Content-Type" : "multipart/form-data",
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
@@ -76,7 +76,7 @@ export const EditProject = () => {
         if(i.repositoryUrl === ""){
             i.repositoryUrl = project?.repositoryUrl || "";
         }
-        axios.put(`${PROJECT_URL}/${params.projectId}`, i, config).then(i => {
+        axios.put(`${PROJECT_ADMIN_URL}/${params.projectId}`, i, config).then(i => {
             console.log(i);
         }).then(() => {
             setOpen(true);

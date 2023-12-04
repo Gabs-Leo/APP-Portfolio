@@ -16,12 +16,12 @@ export const SectionGallery = () => {
                 <div data-aos-mirror="true" data-aos="fade-up" data-aos-duration="1500" className="galleryElement midGallery">
                     <i className="fas fa-gamepad mb-2"></i>
                     <h3>Game Dev</h3>
-                    <p>Desenvolvimento de jogos 3D e 2D para as mais diversas plataformas, utilizando engines como <strong>Game Maker</strong>, <strong>Unreal</strong> ou manualmente com <strong>Java</strong>.</p>
+                    <p>Desenvolvimento de jogos 3D e 2D para as mais diversas plataformas, utilizando engines como <strong>Game Maker</strong>, <strong>Unreal</strong> ou engine própria com <strong>Java</strong>.</p>
                 </div>
                 <div data-aos-mirror="true" data-aos="fade-up" data-aos-duration="1000"className="galleryElement">
-                    <i className="fab fa-react mb-2"></i>
-                    <h3>Aplicações Web</h3>
-                    <p>Criação de apps completos para web, utilizando <strong>ReactJS</strong> no front-end e <strong>Spring Boot</strong> no back-end.</p>
+                    <i className="fas fa-cloud mb-2"></i>
+                    <h3>Devops</h3>
+                    <p>Levantamento de infraestruturas completas em plataformas de cloud como <strong>Google Cloud</strong> e <strong>AWS</strong> utilizando ferramentas de IAC como <strong>Terraform</strong> e <strong>Cloudformation</strong>.</p>
                 </div>
             </div>
         </section>

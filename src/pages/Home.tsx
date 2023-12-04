@@ -3,7 +3,7 @@ import { Form } from "../components/form/Form"
 import { Header } from "../components/header/Header"
 import { SectionGallery } from "../components/sectionGallery/SectionGallery"
 import { SectionProjects } from "../components/sectionProjects/SectionProjects"
-import { SectionSTS } from "../components/sectionSTS/SectionSTS"
+import { SectionSideToSide } from "../components/sectionSideToSide/SectionSideToSide"
 
 export const Home = () => {
     return (
@@ -11,7 +11,7 @@ export const Home = () => {
             <Header />
             <SectionProjects />
             <SectionGallery />
-            <SectionSTS />
+            <SectionSideToSide />
             <Form />
             <Footer />
         </>
