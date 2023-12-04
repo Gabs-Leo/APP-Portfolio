@@ -4,7 +4,7 @@ import { ProgressBar } from "../progressBar/ProgressBar"
 import { MyButton } from "../button/MyButton"
 import { SectionH2 } from "../sectionH2/SectionH2"
 
-export const SectionSTS = () => {
+export const SectionSideToSide = () => {
     return (
     <section id="about" className="pt-5">
         <div className="container">
