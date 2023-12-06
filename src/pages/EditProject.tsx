@@ -27,15 +27,20 @@ export const EditProject = () => {
             const formData = new FormData();
             formData.append("file", file);
 
-            axios.post(`${PROJECT_ADMIN_URL}/${props.project.id}`, {
+            console.log(file);
+            
+            axios.post(`${PROJECT_ADMIN_URL}/${props.project.id}/image`, formData, {
                 headers:{
                     "Content-Type" : "multipart/form-data",
-                    "Authorization": `Bearer ${localStorage.getItem("token")}`
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                    "Access-Control-Allow-Origin" : "*"
                 }
             }).then(() => {
                 axios.get(`${PROJECT_URL}/${params.projectId}`, config).then((i) => {
                     setProject(i.data.content.content as Project);                    
                 })
+            }).catch(error => {
+                console.log(error.response);
             })
         }, [props.project.id]);
         const {getRootProps, getInputProps} = useDropzone({onDrop})
@@ -44,7 +49,7 @@ export const EditProject = () => {
             <div {...getRootProps()}>
                 <input {...getInputProps()} />
                 {
-                    <img src={`${PROJECT_URL}/images/${props.project.id}`} alt="" />
+                    <img src={`${PROJECT_URL}/${props.project.id}/image`} alt="" />
                 }
             </div>
         )

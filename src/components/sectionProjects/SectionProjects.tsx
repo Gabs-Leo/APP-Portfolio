@@ -47,7 +47,7 @@ const ProjectComponent = (props:ProjectProps) => {
             data-aos="fade-down-right" 
             data-aos-duration="1400" 
             className="projectElement" 
-            style={{backgroundImage: `url(${PROJECT_URL}/images/${props.projects?.id})`}}>
+            style={{backgroundImage: `url(${PROJECT_URL}/${props.projects?.id}/image)`}}>
             {props.projects ?
             <div className="hoverDetails">
                 <div className="hoverContent">
